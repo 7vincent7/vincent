@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Trang web 4 lựa chọn</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        /* Nút lựa chọn */
+        .menu button {
+            padding: 10px 20px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+
+        /* Nội dung */
+        .content {
+            display: none;
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Chọn một mục</h2>
+
+    <div class="menu">
+        <button onclick="showContent(1)">Lựa chọn 1</button>
+        <button onclick="showContent(2)">Lựa chọn 2</button>
+        <button onclick="showContent(3)">Lựa chọn 3</button>
+        <button onclick="showContent(4)">Lựa chọn 4</button>
+    </div>
+
+    <div id="content1" class="content">
+        <h3>Nội dung 1</h3>
+        <p>Đây là nội dung của lựa chọn 1.</p>
+    </div>
+
+    <div id="content2" class="content">
+        <h3>Nội dung 2</h3>
+        <p>Đây là nội dung của lựa chọn 2.</p>
+    </div>
+
+    <div id="content3" class="content">
+        <h3>Nội dung 3</h3>
+        <p>Đây là nội dung của lựa chọn 3.</p>
+    </div>
+
+    <div id="content4" class="content">
+        <h3>Nội dung 4</h3>
+        <p>Đây là nội dung của lựa chọn 4.</p>
+    </div>
+
+    <script>
+        function showContent(number) {
+            // Ẩn tất cả nội dung
+            let contents = document.querySelectorAll('.content');
+            contents.forEach(content => content.style.display = 'none');
+
+            // Hiện nội dung được chọn
+            document.getElementById('content' + number).style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
