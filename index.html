@@ -6,66 +6,121 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            padding: 20px;
+            background: linear-gradient(135deg, #74ebd5, #9face6);
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px;
         }
 
-        /* Nút lựa chọn */
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #333;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
         .menu button {
-            padding: 10px 20px;
-            margin-right: 10px;
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background: #e0e0e0;
             cursor: pointer;
+            font-weight: bold;
+            transition: 0.3s;
         }
 
-        /* Nội dung */
+        .menu button:hover {
+            background: #6c63ff;
+            color: white;
+        }
+
+        .menu button.active {
+            background: #6c63ff;
+            color: white;
+        }
+
         .content {
             display: none;
-            margin-top: 20px;
-            padding: 15px;
-            border: 1px solid #ccc;
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 10px;
+            animation: fade 0.4s ease-in-out;
+        }
+
+        #content1 { background: #ffe5e5; }
+        #content2 { background: #e5f0ff; }
+        #content3 { background: #e5ffe9; }
+        #content4 { background: #fff4e5; }
+
+        @keyframes fade {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
 
-    <h2>Chọn một mục</h2>
+<div class="container">
+    <h2>✨ Chọn một nội dung ✨</h2>
 
     <div class="menu">
-        <button onclick="showContent(1)">Lựa chọn 1</button>
-        <button onclick="showContent(2)">Lựa chọn 2</button>
-        <button onclick="showContent(3)">Lựa chọn 3</button>
-        <button onclick="showContent(4)">Lựa chọn 4</button>
+        <button onclick="showContent(1, this)">Mục 1</button>
+        <button onclick="showContent(2, this)">Mục 2</button>
+        <button onclick="showContent(3, this)">Mục 3</button>
+        <button onclick="showContent(4, this)">Mục 4</button>
     </div>
 
     <div id="content1" class="content">
-        <h3>Nội dung 1</h3>
-        <p>Đây là nội dung của lựa chọn 1.</p>
+        <h3>📘 Nội dung 1</h3>
+        <p>Đây là nội dung cho mục số 1. Bạn có thể ghi bất cứ gì ở đây.</p>
     </div>
 
     <div id="content2" class="content">
-        <h3>Nội dung 2</h3>
-        <p>Đây là nội dung của lựa chọn 2.</p>
+        <h3>📗 Nội dung 2</h3>
+        <p>Nội dung mục 2, có thể là thông tin, hình ảnh hoặc link.</p>
     </div>
 
     <div id="content3" class="content">
-        <h3>Nội dung 3</h3>
-        <p>Đây là nội dung của lựa chọn 3.</p>
+        <h3>📙 Nội dung 3</h3>
+        <p>Đây là phần nội dung của lựa chọn thứ 3.</p>
     </div>
 
     <div id="content4" class="content">
-        <h3>Nội dung 4</h3>
-        <p>Đây là nội dung của lựa chọn 4.</p>
+        <h3>📕 Nội dung 4</h3>
+        <p>Nội dung cho lựa chọn cuối cùng.</p>
     </div>
+</div>
 
-    <script>
-        function showContent(number) {
-            // Ẩn tất cả nội dung
-            let contents = document.querySelectorAll('.content');
-            contents.forEach(content => content.style.display = 'none');
+<script>
+    function showContent(number, btn) {
+        // Ẩn tất cả nội dung
+        document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
 
-            // Hiện nội dung được chọn
-            document.getElementById('content' + number).style.display = 'block';
-        }
-    </script>
+        // Bỏ active tất cả nút
+        document.querySelectorAll('.menu button').forEach(b => b.classList.remove('active'));
+
+        // Hiện nội dung được chọn
+        document.getElementById('content' + number).style.display = 'block';
+
+        // Active nút
+        btn.classList.add('active');
+    }
+</script>
 
 </body>
 </html>
