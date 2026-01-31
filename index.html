@@ -2,7 +2,7 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <title>Trang web 4 lựa chọn</title>
+    <title>Chủ nghĩa Mác-Lênin</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -13,9 +13,9 @@
         }
 
         .container {
-            max-width: 700px;
+            max-width: 800px;
             margin: auto;
-            background: white;
+            background: #fff;
             border-radius: 12px;
             padding: 30px;
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
@@ -23,102 +23,206 @@
 
         h2 {
             text-align: center;
-            margin-bottom: 25px;
-            color: #333;
+            margin-bottom: 5px;
         }
 
-        .menu {
-            display: flex;
-            justify-content: space-between;
-            gap: 10px;
+        .author {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
         }
 
-        .menu button {
-            flex: 1;
-            padding: 12px;
+        /* ===== MỤC LỚN ===== */
+        .main-btn {
+            width: 100%;
+            padding: 14px;
+            margin-top: 10px;
             border: none;
             border-radius: 8px;
-            background: #e0e0e0;
+            background: #6c63ff;
+            color: white;
+            font-size: 16px;
             cursor: pointer;
-            font-weight: bold;
-            transition: 0.3s;
+            text-align: left;
         }
 
-        .menu button:hover {
-            background: #6c63ff;
-            color: white;
-        }
-
-        .menu button.active {
-            background: #6c63ff;
-            color: white;
-        }
-
-        .content {
+        .main-content {
             display: none;
-            margin-top: 25px;
-            padding: 20px;
-            border-radius: 10px;
-            animation: fade 0.4s ease-in-out;
+            padding: 15px;
+            border-left: 4px solid #6c63ff;
+            margin-bottom: 10px;
         }
 
-        #content1 { background: #ffe5e5; }
-        #content2 { background: #e5f0ff; }
-        #content3 { background: #e5ffe9; }
-        #content4 { background: #fff4e5; }
+        /* ===== MỤC NHỎ ===== */
+        .sub-btn {
+            width: 100%;
+            padding: 10px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 6px;
+            background: #f0f0f0;
+            cursor: pointer;
+            text-align: left;
+            font-weight: bold;
+        }
 
-        @keyframes fade {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
+        .sub-content {
+            display: none;
+            padding: 10px 15px;
+            margin-left: 15px;
+            border-left: 3px solid #ccc;
+        }
+
+        /* ===== MỤC RẤT NHỎ (CHI TIẾT) ===== */
+        .detail {
+            margin-top: 8px;
+            padding: 10px;
+            background: #fafafa;
+            border-radius: 6px;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <h2>✨ Chọn một nội dung ✨</h2>
+    <h2>📚 Chủ nghĩa Mác-Lênin</h2>
+    <div class="author">Tác giả: <strong>2/ Nguyễn Đình Linh</strong></div>
 
-    <div class="menu">
-        <button onclick="showContent(1, this)">Mục 1</button>
-        <button onclick="showContent(2, this)">Mục 2</button>
-        <button onclick="showContent(3, this)">Mục 3</button>
-        <button onclick="showContent(4, this)">Mục 4</button>
+    <!-- ===== MỤC 1 ===== -->
+    <button class="main-btn" onclick="toggle('main1')">▶ Ba nhà kinh điển của chủ nghĩa Mác – Lênin</button>
+    <div id="main1" class="main-content">
+
+        <button class="sub-btn" onclick="toggle('sub1-1')">➤ Karl Marx (C. Mác)</button>
+        <div id="sub1-1" class="sub-content">
+
+            <!-- MỤC 1.1.1 -->
+            <button class="sub-btn" onclick="toggle('sub1-1-1')">
+                ➤➤ Thông tin cơ bản
+            </button>
+            <div id="sub1-1-1" class="sub-content">
+                <div class="detail">
+                    <b>- Họ và tên đầy đủ:</b> Karl Heinrich Marx <br>
+                    <b>- Ngày sinh:</b> 5 tháng 5 năm 1818 <br>
+                    <b>- Quê quán:</b> Trier, Phổ (nay thuộc bang Rheinland-Pfalz, Đức) <br>
+                    <b>- Ngày mất:</b> 14 tháng 3 năm 1883 (64 tuổi) <br>
+                    <b>- Nơi mất:</b> London, Anh
+                </div>
+            </div>
+
+            <!-- MỤC 1.1.2 -->
+            <button class="sub-btn" onclick="toggle('sub1-1-2')">
+                ➤➤ Quốc tịch
+            </button>
+            <div id="sub1-1-2" class="sub-content">
+                <div class="detail">
+                    - Phổ (1818–1845) <br>
+                    - Không quốc tịch (sau năm 1845)
+                </div>
+            </div>
+
+            <!-- MỤC 1.1.3 -->
+            <button class="sub-btn" onclick="toggle('sub1-1-3')">
+                ➤➤ Học vấn
+            </button>
+            <div id="sub1-1-3" class="sub-content">
+                <div class="detail">
+                    - Đại học Bonn <br>
+                    - Đại học Berlin <br>
+                    - Tiến sĩ tại Đại học Jena (1841)
+                </div>
+            </div>
+
+            <!-- MỤC 1.1.4 -->
+            <button class="sub-btn" onclick="toggle('sub1-1-4')">
+                ➤➤ Gia đình
+            </button>
+            <div id="sub1-1-4" class="sub-content">
+                <div class="detail">
+                    - <b>Vợ:</b> Jenny von Westphalen (cưới năm 1843 – mất 1881) <br>
+                    - <b>Con cái:</b> 7 người, trong đó có Jenny, Laura, Eleanor <br>
+                    - <b>Cha:</b> Heinrich Marx <br>
+                    - <b>Mẹ:</b> Henriette Pressburg
+                </div>
+            </div>
+
+            <!-- MỤC 1.1.5 -->
+            <button class="sub-btn" onclick="toggle('sub1-1-5')">
+                ➤➤ Ngành, lĩnh vực hoạt động
+            </button>
+            <div id="sub1-1-5" class="sub-content">
+                <div class="detail">
+                    - Triết học <br>
+                    - Kinh tế học <br>
+                    - Lịch sử <br>
+                    - Chính trị
+                </div>
+            </div>
+
+            <!-- MỤC 1.1.6 -->
+            <button class="sub-btn" onclick="toggle('sub1-1-6')">
+                ➤➤ Một số đóng góp chính
+            </button>
+            <div id="sub1-1-6" class="sub-content">
+                <div class="detail">
+                    <b>Tư tưởng nổi bật bao gồm:</b> Đấu tranh giai cấp; Lượng giá trị của hàng hóa; Chủ nghĩa duy vật lịch sử; Phép biện chứng, phê phán kinh tế chính trị
+                </div>
+            </div>
+
+        </div>
+         
+        <button class="sub-btn" onclick="toggle('sub1-2')">➤ Friedrich Engels (Ph. Ăngghen)</button>
+        <div id="sub1-2" class="sub-content">
+            <div class="detail">
+                Nội dung chi tiết của mục 1.2
+            </div>
+        </div>
+
+        <button class="sub-btn" onclick="toggle('sub1-3')">➤ Vladimir Ilyich Lenin (V.I. Lênin)</button>
+        <div id="sub1-3" class="sub-content">
+            <div class="detail">
+                Nội dung chi tiết của mục 1.2
+            </div>
+        </div>
+
     </div>
 
-    <div id="content1" class="content">
-        <h3>📘 Nội dung 1</h3>
-        <p>Đây là nội dung cho mục số 1. Bạn có thể ghi bất cứ gì ở đây.</p>
+    <!-- ===== MỤC 2 ===== -->
+    <button class="main-btn" onclick="toggle('main2')">▶ Mục 2</button>
+    <div id="main2" class="main-content">
+
+        <button class="sub-btn" onclick="toggle('sub2-1')">➤ Mục 2.1</button>
+        <div id="sub2-1" class="sub-content">
+            <div class="detail">
+                Nội dung chi tiết mục 2.1
+            </div>
+        </div>
+
     </div>
 
-    <div id="content2" class="content">
-        <h3>📗 Nội dung 2</h3>
-        <p>Nội dung mục 2, có thể là thông tin, hình ảnh hoặc link.</p>
+    <!-- ===== MỤC 3 ===== -->
+    <button class="main-btn" onclick="toggle('main3')">▶ Mục 3</button>
+    <div id="main3" class="main-content">
+        <div class="detail">
+            Nội dung đơn giản cho mục 3
+        </div>
     </div>
 
-    <div id="content3" class="content">
-        <h3>📙 Nội dung 3</h3>
-        <p>Đây là phần nội dung của lựa chọn thứ 3.</p>
+    <!-- ===== MỤC 4 ===== -->
+    <button class="main-btn" onclick="toggle('main4')">▶ Mục 4</button>
+    <div id="main4" class="main-content">
+        <div class="detail">
+            Nội dung mục 4
+        </div>
     </div>
 
-    <div id="content4" class="content">
-        <h3>📕 Nội dung 4</h3>
-        <p>Nội dung cho lựa chọn cuối cùng.</p>
-    </div>
 </div>
 
 <script>
-    function showContent(number, btn) {
-        // Ẩn tất cả nội dung
-        document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
-
-        // Bỏ active tất cả nút
-        document.querySelectorAll('.menu button').forEach(b => b.classList.remove('active'));
-
-        // Hiện nội dung được chọn
-        document.getElementById('content' + number).style.display = 'block';
-
-        // Active nút
-        btn.classList.add('active');
+    function toggle(id) {
+        const el = document.getElementById(id);
+        el.style.display = (el.style.display === "block") ? "none" : "block";
     }
 </script>
 
